@@ -13,4 +13,4 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Projeto proposto pelo ignite da Rocketseat
 
-Você pode visualizar o projeto através [DESSE LINK](https://fintech-login.vercel.app/).
+Você pode visualizar o projeto através [DESSE LINK](https://to-do-list-zoqv.vercel.app/).
