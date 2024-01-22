@@ -1,0 +1,23 @@
+.haveNoTasks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6.4rem 2.4rem;
+  border-top: 1px solid var(--gray-400);
+  border-radius: 8px;
+}
+
+.haveNoTasks img {
+  margin-bottom: 1.6rem;
+}
+
+.haveNoTasks p {
+  color: var(--gray-300);
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.haveNoTasks p:last-child {
+  font-weight: 400;
+}

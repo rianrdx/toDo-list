@@ -1,0 +1,62 @@
+.task {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border: 0;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  border-radius: 8px;
+  background-color: var(--gray-500);
+}
+
+.task + .task {
+  margin-top: 1.2rem;
+}
+
+.task input {
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  cursor: pointer;
+
+  position: relative;
+}
+
+.task input:checked {
+  background-color: var(--purple-dark);
+  border: 0;
+}
+
+.task input:checked + p {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.task input:checked::before {
+  content: "🗸";
+  color: var(--gray-100);
+  position: absolute;
+  left: 0.3rem;
+}
+
+.task p {
+  color: var(--gray-100);
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-top: -0.4rem;
+}
+
+.task button {
+  background: transparent;
+  border: 0;
+  line-height: 0;
+  color: var(--gray-300);
+}
+
+.task button:hover {
+  cursor: pointer;
+  color: var(--red-300);
+}
