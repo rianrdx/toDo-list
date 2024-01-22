@@ -10,14 +10,11 @@ export function TaskArea() {
   const [newTask, setNewTask] = useState<string>("");
   const [taskStates, setTaskStates] = useState<boolean[]>([]);
 
-  let totalTasks = tasks.length;
-  let completedTasks = taskStates.filter((state) => state).length;
-
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault();
 
     setTasks([...tasks, newTask]);
-    setTaskStates([...taskStates, false]); // Initially, all tasks are not completed
+    setTaskStates([...taskStates, false]); // Inicialmente, todas as tarefas não estão concluídas
     setNewTask("");
   }
 
@@ -28,7 +25,7 @@ export function TaskArea() {
   }
 
   function deleteTask(index: number) {
-    const tasksWithoutDeleteOne = tasks.filter((task, i) => i !== index);
+    const tasksWithoutDeleteOne = tasks.filter((_, i) => i !== index);
 
     const updatedTaskStates = [...taskStates];
     updatedTaskStates.splice(index, 1);
@@ -73,16 +70,16 @@ export function TaskArea() {
       </form>
       <div className={styles.header}>
         <p>
-          Tarefas criadas<span>{totalTasks}</span>
+          Tarefas criadas<span>{tasks.length}</span>
         </p>
         <p>
           Concluídas
           <span>
-            {completedTasks} de {totalTasks}
+            {taskStates.filter((state) => state).length} de {tasks.length}
           </span>
         </p>
       </div>
-      {totalTasks === 0 ? <HaveNoTask /> : null}
+      {tasks.length === 0 ? <HaveNoTask /> : null}
       {tasks.map((task, index) => (
         <Task
           key={task}
